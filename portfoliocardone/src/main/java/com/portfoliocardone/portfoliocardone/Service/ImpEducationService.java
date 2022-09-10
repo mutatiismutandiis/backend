@@ -4,10 +4,12 @@ import com.portfoliocardone.portfoliocardone.Entity.Education;
 import com.portfoliocardone.portfoliocardone.Interface.IEducationService;
 import com.portfoliocardone.portfoliocardone.Repository.IEducationRepository;
 import java.util.List;
+import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
+@Transactional
 public class ImpEducationService implements IEducationService{
 
     @Autowired IEducationRepository ieducationRepository;

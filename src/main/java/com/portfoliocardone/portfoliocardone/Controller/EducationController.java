@@ -55,8 +55,8 @@ public class EducationController {
         return education;
     }
     
-    @GetMapping("/education/find/profile")
-    public Education findEducation(){
-        return ieducationService.findEducation((long)1);
+    @GetMapping("/education/find/profile/{id}")
+    public Education findEducation(@PathVariable Long id){
+        return ieducationService.findEducation((long)id);
     }
 }

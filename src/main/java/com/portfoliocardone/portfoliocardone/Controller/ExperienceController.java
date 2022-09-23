@@ -55,7 +55,7 @@ public class ExperienceController {
         return experience;
     }
     
-    @GetMapping("/experience/find/{id}")
+    @GetMapping("/experience/find/profile/{id}")
     public Experience findExperience(@PathVariable Long id){
         return iexperienceService.findExperience((long)id);
     }

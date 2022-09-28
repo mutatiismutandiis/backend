@@ -56,13 +56,9 @@ public class EducationController {
         ieducationService.saveEducation(education);
         return education;
     }
-    
-    @RequestMapping(value = "/experience/find/profile/{id}", method = RequestMethod.GET)
-    public Education findEducation(@PathVariable("id") Long id) {
-        return ieducationService.findEducation((long)id);
+
+    @GetMapping("/education/find/profile/{id}")
+    public Education findEducation(@PathVariable("id") Long id){
+        return ieducationService.findEducation((long)1);
     }
-    //@GetMapping("/education/find/profile/{id}")
-    //public Education findEducation(@PathVariable Long id){
-    //    return ieducationService.findEducation((long)1);
-    //}
 }

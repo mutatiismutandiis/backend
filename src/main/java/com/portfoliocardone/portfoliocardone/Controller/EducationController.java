@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -55,8 +57,12 @@ public class EducationController {
         return education;
     }
     
-    @GetMapping("/education/find/profile/{id}")
-    public Education findEducation(@PathVariable Long id){
+    @RequestMapping(value = "/experience/find/profile/{id}", method = RequestMethod.GET)
+    public Education findEducation(@PathVariable("id") Long id) {
         return ieducationService.findEducation((long)id);
     }
+    //@GetMapping("/education/find/profile/{id}")
+    //public Education findEducation(@PathVariable Long id){
+    //    return ieducationService.findEducation((long)1);
+    //}
 }

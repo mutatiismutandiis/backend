@@ -55,15 +55,9 @@ public class ExperienceController {
         iexperienceService.saveExperience(experience);
         return experience;
     }
-    
-    @GetMapping("/experience/find/profile/{id}/{title}/{time}/{location}/{description}")
-    @ResponseBody
-    public Experience findExperience(@PathVariable Long id, @PathVariable String title, @PathVariable String time, @PathVariable String location, @PathVariable String description) {
-    return iexperienceService.findExperience((long)id);
-}
-    
-    //@GetMapping("/experience/find/profile/{id}")
-    //public Experience findExperience(@PathVariable("id") Long id){
-    //    return iexperienceService.findExperience((long)id);
-    //}
+        
+    @GetMapping("/experience/find/profile/{id}")
+    public Experience findExperience(@PathVariable("id") Long id){
+        return iexperienceService.findExperience((long)id);
+    }
 }
